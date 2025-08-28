@@ -1,10 +1,18 @@
-{{ block title }}Instructions{{ endblock }}
+{{ block title }}Instructions – Session 1{{ endblock }}
 {{ block content }}
-<h3>Welcome to Session 1: First-Price Sealed Bid Auction</h3>
-<p>You will be randomly paired with another participant each round.</p>
-<p>Your valuation will be between 0.00 and 1.00. You will submit a bid without knowing your opponent’s valuation or bid.</p>
-<p>If your bid is higher, you win and earn: <strong>valuation − bid</strong>.</p>
-<p>If bids are equal, payoff is split: <strong>(valuation − bid) / 2</strong>.</p>
-<p>If your bid is lower, you earn 0 points.</p>
+<h3>Session 1: First-Price Sealed Bid Auction</h3>
+
+<p>You will be randomly paired with a different participant each round.</p>
+
+<p>Each round, you will receive a valuation between <strong>0.01 and 1.00</strong>. You will submit a bid without knowing your opponent’s valuation or bid.</p>
+
+<p><strong>Payoff Rules:</strong></p>
+<ul>
+    <li>If your bid is lower than your opponent’s, you earn <strong>0 points</strong>.</li>
+    <li>If your bid is higher, you earn: <strong>valuation − bid</strong>.</li>
+    <li>If bids are equal, you earn: <strong>(valuation − bid) / 2</strong>.</li>
+</ul>
+
+<p>You have <strong>1 minute</strong> to submit your bid each round. If you do not submit a bid in time, you will earn 0 points.</p>
 {{ endblock }}
 
