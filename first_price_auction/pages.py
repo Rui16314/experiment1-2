@@ -1,16 +1,16 @@
-from otree.api import *
-import random
+from . import models
+from .models import C, Subsession, Group, PlayerFirstPrice  # updated
 
-class Instructions(Page):
-    def is_displayed(player):
-        return player.round_number == 1
-
-class Bid(Page):
+class BidPage(Page):
     form_model = 'player'
     form_fields = ['bid']
 
-    def before_next_page(player, timeout_happened):
-        player.valuation = round(random.uniform(0.01, 1.00), 2)
+    def vars_for_template(self):
+        return dict(
+            valuation=self.player.valuation,
+            opponent_bid=self.player.opponent_bid,
+        )
+
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(group):
