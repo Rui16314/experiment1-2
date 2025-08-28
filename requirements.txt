@@ -1,1 +1,4 @@
+otree==5.0.0
+matplotlib
+pandas
 
