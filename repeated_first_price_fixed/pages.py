@@ -10,15 +10,13 @@ class Bid(Page):
     form_fields = ['bid']
 
     def before_next_page(player, timeout_happened):
-        # Assign valuation only in round 1
         if player.round_number == 1:
             player.valuation = round(random.uniform(0.10, 1.00), 2)
         else:
-            # Copy valuation from previous round
             player.valuation = player.in_round(1).valuation
 
 class ResultsWaitPage(WaitPage):
-    group_by_arrival_time = False  # Fixed pairing across rounds
+    group_by_arrival_time = False  # Fixed pairing across all rounds
 
     def after_all_players_arrive(group):
         p1, p2 = group.get_players()
