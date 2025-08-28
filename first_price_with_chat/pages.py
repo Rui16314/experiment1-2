@@ -5,16 +5,18 @@ class Instructions(Page):
     def is_displayed(player):
         return player.round_number == 1
 
+class Chat(Page):
+    def is_displayed(player):
+        return True
+
 class Bid(Page):
     form_model = 'player'
     form_fields = ['bid']
 
     def before_next_page(player, timeout_happened):
-        player.valuation = round(random.uniform(0.1, 1.0), 2)
+        player.valuation = round(random.uniform(0.01, 1.00), 2)
 
 class ResultsWaitPage(WaitPage):
-    group_by_arrival_time = False
-
     def after_all_players_arrive(group):
         p1, p2 = group.get_players()
         p1.opponent_bid = p2.bid
@@ -37,5 +39,5 @@ class Results(Page):
             payoff=player.payoff,
         )
 
-page_sequence = [Instructions, Bid, ResultsWaitPage, Results]
+page_sequence = [Instructions, Chat, Bid, ResultsWaitPage, Results]
 
