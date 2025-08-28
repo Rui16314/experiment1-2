@@ -11,7 +11,7 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     pass
 
-class Player2(BasePlayer):
+class PlayerRepeatedFirstPrice(BasePlayer):  # Renamed from Player
     valuation = models.FloatField()
     bid = models.FloatField(min=0, max=1)
     opponent_bid = models.FloatField()
