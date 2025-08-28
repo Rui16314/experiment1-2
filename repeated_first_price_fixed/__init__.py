@@ -1,7 +1,7 @@
 from otree.api import *
 
 class C(BaseConstants):
-    NAME_IN_URL = 'first_price_with_chat'
+    NAME_IN_URL = 'repeated_first_price_fixed'
     PLAYERS_PER_GROUP = 2
     NUM_ROUNDS = 10
 
