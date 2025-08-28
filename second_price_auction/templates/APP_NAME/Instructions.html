@@ -1,1 +1,18 @@
+{{ block title }}Instructions – Session 4{{ endblock }}
+{{ block content }}
+<h3>Session 4: Second-Price Sealed Bid Auction</h3>
+
+<p>You will be randomly paired with a different participant each round.</p>
+
+<p>Each round, you will receive a valuation between <strong>0.01 and 100.00</strong>. You will submit a bid without knowing your opponent’s valuation or bid.</p>
+
+<p><strong>Payoff Rules:</strong></p>
+<ul>
+    <li>If your bid is lower than your opponent’s, you earn <strong>0 points</strong>.</li>
+    <li>If your bid is higher, you earn: <strong>valuation − opponent’s bid</strong>.</li>
+    <li>If bids are equal, you earn: <strong>(valuation − opponent’s bid) / 2</strong>.</li>
+</ul>
+
+<p>You have <strong>1 minute</strong> to submit your bid each round. If you do not submit a bid in time, you will earn 0 points.</p>
+{{ endblock }}
 
