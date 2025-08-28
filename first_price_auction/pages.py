@@ -10,7 +10,6 @@ class Bid(Page):
     form_fields = ['bid']
 
     def before_next_page(player, timeout_happened):
-        # Valuation changes every round
         player.valuation = round(random.uniform(0.01, 1.00), 2)
 
 class ResultsWaitPage(WaitPage):
