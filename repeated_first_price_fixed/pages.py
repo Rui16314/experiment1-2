@@ -1,6 +1,9 @@
 from otree.api import *
 import random
 
+from . import models
+from .models import C, Subsession, Group, PlayerRepeatedFirstPrice  # updated
+
 class Instructions(Page):
     def is_displayed(player):
         return player.round_number == 1
